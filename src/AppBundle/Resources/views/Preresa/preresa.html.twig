@@ -14,7 +14,6 @@
 
                 <div id="form_connexion">
                     {% if form is not defined %}
-
                         {#Si vehicule non disponible #}
                         {% if vehicle.available == 0 %}
                             {{ 'loc.form.unavailable-booking-user' | trans }}<br />
@@ -28,8 +27,10 @@
                             {% endif %}
                         {% endif %}
                     {% else %}
+                        {# Affichage du formulaire #}
                         <u>{{ 'loc.form.introduce' |trans }}</u><br />
                         <div class="resa-existante">
+                            {# Affichage des éventuelles réservations #}
                             {% if daterent|length > 0 %}
                                 {{ 'loc.form.resa-exist' |trans }} <br />
                                 {% for dateprerent in daterent %}
